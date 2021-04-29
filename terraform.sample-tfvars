@@ -1,0 +1,11 @@
+# this is a sample terraform variable values file (.tfvars)
+
+aws_profile             = "default" 
+aws_env                 = "dev"
+aws_region              = "us-east-2"
+app_name                = "PackerBuildUsingSSM"
+app_shortcode           = "pbssm"
+vpc_cidr                = "10.8.0.0/16"
+vpc_name                = "packer_vpc"
+priv_subnet_cidr        = "10.8.1.0/24"
+priv_subnet_name        = "packer_subnet"
