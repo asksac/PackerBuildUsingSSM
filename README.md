@@ -33,6 +33,18 @@ Refer to the provided [sample file](ami_build.sample-pkrvars.hcl). To run the bu
 packer build -var-file="variables.pkrvars.hcl" .
 ```
 
+# Cleanup
+
+To manually remove (i.e. deregister) old AMIs created in your AWS account, run the following commands: 
+
+```shell
+# list all existing images owned by self 
+aws ec2 describe-images --owners self --query 'Images[*].[ImageId,Name]' --output text --region "us-east-2" 
+
+# deregister selected images
+aws ec2 deregister-image --region "us-east-2" --image-id ami-0a1b2c3d4e5f1234 
+```
+
 # License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
