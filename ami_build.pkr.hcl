@@ -10,6 +10,7 @@ source "amazon-ebs" "ec2_ami" {
   profile                   = var.profile
   region                    = var.region
   ami_name                  = "${var.app_name}-{{timestamp}}"
+  force_deregister          = true
 
   instance_type             = "c5.large"
   source_ami_filter {
